@@ -13,7 +13,7 @@ public typealias TextAttributes = [String: AnyObject]
 internal func fontWithTraits(traits: UIFontDescriptorSymbolicTraits, font: UIFont) -> UIFont {
     let combinedTraits = UIFontDescriptorSymbolicTraits(rawValue: font.fontDescriptor().symbolicTraits.rawValue | (traits.rawValue & 0xFFFF))
     let descriptor = font.fontDescriptor().fontDescriptorWithSymbolicTraits(combinedTraits)
-    return UIFont(descriptor: descriptor, size: font.pointSize)
+    return UIFont(descriptor: descriptor!, size: font.pointSize)
 }
 
 internal func regexFromPattern(pattern: String) -> NSRegularExpression {
